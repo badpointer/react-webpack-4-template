@@ -20,20 +20,24 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                {
-                    loader: "style-loader"
-                },
-                {
-                    loader: "css-loader",
-                    options : {
-                        module: true,
-                        importLoaders: 1,
-                        localIdentName: "[name]_[local]_[hash:base64]",
-                        sourceMap: true,
-                        minimize: true
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            module: true,
+                            importLoaders: 1,
+                            localIdentName: "[name]_[local]_[hash:base64]",
+                            sourceMap: true,
+                            minimize: true
+                        }
                     }
-                }
-            ]
+                ]
+            },
+            {
+                test:/\.(woff|woff2|eot|ttf|otf)$/,
+                use:['file-loader']
             }
         ]
     },

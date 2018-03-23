@@ -1,20 +1,24 @@
-import {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Button from 'material-ui/Button';
 
 class AppContainer extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       Hello: 'Hello from within App Container!'
     };
   };
 
-  render () {
+  render() {
     return (
       <h1>
         {this.state.Hello}
-        <br/>
+        <br />
         {this.props.helloDefaultProp}
+        <Button variant="raised" color="primary">
+          Hello World
+        </Button>
       </h1>
     );
   };
